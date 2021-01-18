@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 1124540966}
   - component: {fileID: 1124540965}
   - component: {fileID: 1124540968}
+  - component: {fileID: 1124540969}
   m_Layer: 0
   m_Name: ManagerHub
   m_TagString: Untagged
@@ -342,6 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logScript: {fileID: 1124540965}
   screenshotScript: {fileID: 1124540968}
+  cameraMovementScript: {fileID: 1124540969}
 --- !u!4 &1124540967
 Transform:
   m_ObjectHideFlags: 0
@@ -368,6 +370,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 303439a685010f24b9ad5c97a80bb336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1124540969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124540964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f57aed640cef6944820b02d6d2265ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  CameraObject: {fileID: 534669902}
 --- !u!1 &1247857095
 GameObject:
   m_ObjectHideFlags: 0
