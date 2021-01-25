@@ -18,4 +18,5 @@ public class ListEntry
     public int number;
     public string word;
     public string filelocation;
+    public float zoom;
 }

@@ -31,8 +31,6 @@ public class LoggingScript : MonoBehaviour
 
     public void AddLogEntry()
     {
-        CheckForDefects();
-
         string Screenshotfile =
         gameObject.GetComponent<ManagerHubScript>().screenshotScript.TakeScreenshot();
 
@@ -41,10 +39,11 @@ public class LoggingScript : MonoBehaviour
             timer = timer,
             number = counter,
             word = truefalse().ToString(),
-            filelocation = Screenshotfile
+            filelocation = Screenshotfile,
+            zoom = mainCamera.GetComponent<Camera>().fieldOfView
         });
         counter++;
-        Debug.Log("Counter = " + counter);
+        Debug.Log("Entry Number = " + counter);
     }
 
     public void SaveLogs()
@@ -100,15 +99,16 @@ public class LoggingScript : MonoBehaviour
     public void CheckForDefects()
     {
         defects = GameObject.FindGameObjectsWithTag("Defect");
+        int defectcount = 0;
 
         foreach (GameObject XXX in defects)
         {
             Vector3 screenPoint = mainCamera.WorldToViewportPoint(XXX.transform.position);
             if (screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1)
             {
-                string defectnames = defects.ToString();
-                Debug.LogWarning("Defects = " + defects);
+                defectcount += 1;
             }
         }
+        Debug.LogWarning("Defects = " + defectcount.ToString());
     }
 }
